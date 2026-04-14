@@ -1,0 +1,22 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: admin
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/ty_admin?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    database: 0
+
+logging:
+  level:
+    com.ty.admin: info
+
+ty:
+  organ-name: admin-organ-name
