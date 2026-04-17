@@ -13,6 +13,7 @@
     <description>TyTools multi-module project</description>
 
     <modules>
+        <module>common</module>
         <module>admin</module>
         <module>app</module>
         <module>gateway</module>
