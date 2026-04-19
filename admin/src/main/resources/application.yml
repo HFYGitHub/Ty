@@ -5,13 +5,13 @@ spring:
   application:
     name: admin
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/ty_admin?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
-    username: root
-    password: 123456
+    url: jdbc:mysql://127.0.0.1:3306/ty?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: ty
+    password: ty4766
     driver-class-name: com.mysql.cj.jdbc.Driver
   redis:
     host: 127.0.0.1
-    port: 6379
+    port: 16379
     database: 0
 mybatis-plus:
   configuration:
@@ -21,9 +21,6 @@ logging:
   level:
     com.ty.admin: info
 
-ty:
-  organ-name: admin-organ-name
-
 jwt:
-  secret: xxx
-  expireTime: 30 # 分钟
+  secret: 8f3a9c2e7b6d4f1a9e5c8b2d7f3f6e3c1b4d9f2a9d6e8b1d0f3a5c7e9b2d4f6
+  expire: 30 # 分钟

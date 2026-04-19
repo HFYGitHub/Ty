@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 
 @SpringBootApplication
-@MapperScan("com.ty.admin.mapper")
+@MapperScan("com.ty.admin.mapper,com.ty.common.config")
 @EnableConfigurationProperties(JwtProperties.class)
 public class AdminApplication {
 

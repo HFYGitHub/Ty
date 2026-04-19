@@ -62,9 +62,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     public String login(UserCreateRequest request) {
         User user = baseMapper.selectOne(new LambdaQueryWrapper<User>()
                 .eq(User::getUserName, request.getUserName())
-                .eq(User::getPwd, passwordEncoder.encode(request.getPwd())).last("limit 1"));
+               .last("limit 1"));
 
-        if(user != null){
+        if (user != null && passwordEncoder.matches(request.getPwd(), user.getPwd())) {
             Map<String,Object> claims = new HashMap<>();
             claims.put("userId", user.getId());
             claims.put("username", user.getUserName());
@@ -77,7 +77,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
             redisUtil.set(redisKey, token, jwtProperties.getExpire() * 60);
             return token;
         }else {
-            throw new CommonException(CommonErrorCode.BAD_REQUEST, "登录异常");
+            throw new CommonException(CommonErrorCode.BAD_REQUEST, "登录账号密码错误");
         }
     }
 

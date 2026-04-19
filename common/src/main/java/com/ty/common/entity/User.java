@@ -24,6 +24,12 @@ public class User implements Serializable {
     @TableField("user_name")
     private String userName;
 
+    /**
+     * 用户名
+     */
+    @TableField("user_nick_name")
+    private String userNickName;
+
 
     /**
      * 用户密码
